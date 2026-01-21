@@ -1,4 +1,4 @@
-package com.cetacea
+package com.cetacea.ui.modelos
 
 data class Especie(
     val nombre: String,
