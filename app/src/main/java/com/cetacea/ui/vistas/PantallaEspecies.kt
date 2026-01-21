@@ -21,7 +21,7 @@ import androidx.navigation.NavHostController
 import com.cetacea.ui.modelos.Especie
 
 @Composable
-fun PantallaPrincipal(navController: NavHostController, especies: List<Especie>) {
+fun PantallaEspecies(navController: NavHostController, especies: List<Especie>) {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -33,7 +33,7 @@ fun PantallaPrincipal(navController: NavHostController, especies: List<Especie>)
                 navController.navigate("detalle/${especie.nombre}")
             }
         )
-        BarraNavegacion()
+        BarraNavegacion(navController) // Ahora recibe navController
     }
 }
 
@@ -86,7 +86,7 @@ fun Cuerpo(
 }
 
 @Composable
-fun BarraNavegacion() {
+fun BarraNavegacion(navController: NavHostController) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -97,7 +97,13 @@ fun BarraNavegacion() {
             modifier = Modifier
                 .weight(1f)
                 .height(50.dp)
-                .clickable { },
+                .clickable {
+                    navController.navigate("especies") {
+                        // Evita crear múltiples copias en el stack
+                        popUpTo("especies") { inclusive = true }
+                        launchSingleTop = true
+                    }
+                },
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -114,7 +120,12 @@ fun BarraNavegacion() {
             modifier = Modifier
                 .weight(1f)
                 .height(50.dp)
-                .clickable { },
+                .clickable {
+                    navController.navigate("documentales") {
+                        popUpTo("especies") { inclusive = false }
+                        launchSingleTop = true
+                    }
+                },
             contentAlignment = Alignment.Center
         ) {
             Text(

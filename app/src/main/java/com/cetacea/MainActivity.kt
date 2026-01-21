@@ -11,7 +11,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.cetacea.ui.datos.listaEspecies
 import com.cetacea.ui.vistas.PantallaDetalle
-import com.cetacea.ui.vistas.PantallaPrincipal
+import com.cetacea.ui.vistas.PantallaEspecies
+import com.cetacea.ui.vistas.PantallaDocumentales
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,10 +30,14 @@ fun CetaceaApp() {
     MaterialTheme {
         NavHost(
             navController = navController,
-            startDestination = "pantalla_principal"
+            startDestination = "especies"
         ) {
-            composable("pantalla_principal") {
-                PantallaPrincipal(navController, listaEspecies)
+            composable("especies") {
+                PantallaEspecies(navController, listaEspecies)
+            }
+
+            composable("documentales") {
+                PantallaDocumentales(navController)
             }
 
             composable("detalle/{nombreEspecie}") { backStackEntry ->
