@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -27,6 +28,8 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.cetacea.R
 import com.cetacea.ui.modelos.Especie
+import androidx.compose.foundation.rememberScrollState
+
 
 @Composable
 fun PantallaDetalle(especie: Especie, navController: NavHostController) {
@@ -48,9 +51,14 @@ fun PantallaDetalle(especie: Especie, navController: NavHostController) {
         }
     }
 
+
+
+    val scrollState = rememberScrollState()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(scrollState)
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(

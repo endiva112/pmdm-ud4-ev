@@ -33,7 +33,7 @@ fun PantallaEspecies(navController: NavHostController, especies: List<Especie>) 
                 navController.navigate("detalle/${especie.nombre}")
             }
         )
-        BarraNavegacion(navController) // Ahora recibe navController
+        BarraNavegacion(navController)
     }
 }
 
