@@ -109,7 +109,7 @@ fun PantallaDetalle(especie: Especie, navController: NavHostController) {
         // Descripción
         Text(
             text = especie.descripcion,
-            textAlign = TextAlign.Justify,
+            //textAlign = TextAlign.Justify, //A mi el justify me gusta, comentado por Rafa
             fontSize = 18.sp,
             color = Color(0xFFC6DAF1),
             lineHeight = 24.sp
