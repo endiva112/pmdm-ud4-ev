@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.cetacea.ui.datos.listaEspecies
+import com.cetacea.ui.datos.listaDocumentales
 import com.cetacea.ui.vistas.PantallaDetalle
 import com.cetacea.ui.vistas.PantallaEspecies
 import com.cetacea.ui.vistas.PantallaDocumentales
@@ -37,7 +38,7 @@ fun CetaceaApp() {
             }
 
             composable("documentales") {
-                PantallaDocumentales(navController)
+                PantallaDocumentales(navController, listaDocumentales)
             }
 
             composable("detalle/{nombreEspecie}") { backStackEntry ->

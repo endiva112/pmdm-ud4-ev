@@ -29,6 +29,7 @@ import coil.request.ImageRequest
 import com.cetacea.R
 import com.cetacea.ui.modelos.Especie
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.ui.text.style.TextAlign
 
 
 @Composable
@@ -68,7 +69,7 @@ fun PantallaDetalle(especie: Especie, navController: NavHostController) {
                     )
                 )
             )
-            .padding(16.dp)
+            .padding(24.dp, 16.dp)
     ) {
         // Botón para volver
         Text(
@@ -90,7 +91,7 @@ fun PantallaDetalle(especie: Especie, navController: NavHostController) {
                 .fillMaxWidth()
                 .height(250.dp)
                 .clip(RoundedCornerShape(16.dp)),
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.Fit
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -108,6 +109,7 @@ fun PantallaDetalle(especie: Especie, navController: NavHostController) {
         // Descripción
         Text(
             text = especie.descripcion,
+            textAlign = TextAlign.Justify,
             fontSize = 18.sp,
             color = Color(0xFFC6DAF1),
             lineHeight = 24.sp
