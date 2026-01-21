@@ -157,7 +157,7 @@ fun ReproductorAudio(player: MediaPlayer) {
         // Botón Play
         Box(
             modifier = Modifier
-                .size(50.dp)
+                .size(60.dp)
                 .background(
                     color = Color(0xFF007EA7),
                     shape = CircleShape
@@ -180,7 +180,7 @@ fun ReproductorAudio(player: MediaPlayer) {
         // Botón Pause
         Box(
             modifier = Modifier
-                .size(50.dp)
+                .size(60.dp)
                 .background(
                     color = Color(0xFF1E3A5F),
                     shape = CircleShape
@@ -217,9 +217,9 @@ fun ReproductorAudio(player: MediaPlayer) {
             contentAlignment = Alignment.Center
         ) {
             Text(
-                text = "Reiniciar",
+                text = "Reset",
                 color = Color(0xFFC6DAF1),
-                fontSize = 12.sp,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Bold
             )
         }
