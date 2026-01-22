@@ -1,11 +1,12 @@
 package com.cetacea.ui.datos
 
+import com.cetacea.R
 import com.cetacea.ui.modelos.Documental
 
 val listaDocumentales = listOf(
     Documental("¿Los cetáceos y los humanos hablan el mismo lenguaje? | DW Documental",
-        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"),
+        R.raw.video_ballenas),
     Documental("OCÉANO PACÍFICO - Secretos de un Universo Azul",
-        "https://pixabay.com/videos/download/video-244188_medium.mp4")
+        R.raw.video_ballenas2)
 )
 
